@@ -30,7 +30,7 @@ scripting. The specific list of projects contained follows:
 
 ## Author :
 
-* **Hassan Hajir** <https://github.com/Hassan-Hajir)>
+* **Hassan Hajir**  : <https://github.com/Hassan-Hajir)>
 
 ## Acknowledgements :pray:
 
