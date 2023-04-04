@@ -2,4 +2,4 @@
 
 def copy_list(mylist):
 
-    return(mylist.copy)
+    return mylist[:]
