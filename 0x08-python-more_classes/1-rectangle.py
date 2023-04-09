@@ -21,15 +21,7 @@ class Rectangle:
         return self.__width
 
     @width.setter
-    """Sets the value of the width attribute.
-
-    Args:
-        value (int): The new value for the width attribute.
-
-    Raises:
-        TypeError: If value is not an integer.
-        ValueError: If value is less than 0.
-    """
+    
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
