@@ -1,17 +1,27 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""
+Solves the N-queens puzzle.
+Checks all possible soln to placing N non-attacking queens on chessboard.
 
-"""Solve the N-queens puzzle."""
+Example:
+    $ ./nqueens.py N
+
+N must be an integer greater than or equal to 4.
+
+Attributes:
+    board (list): A list of lists representing the chessboard.
+    solutions (list): A list containing solutions.
+        Solutions are r in the format [[r, c], [r, c], [r, c], [r, c]]
+        where `r` and `c` represent the row and column, respectively,
+        where a queen must be placed on the chessboard.
+"""
 
 import sys
 
 
 def init_board(n):
     """Initialize an `n`x`n` sized chessboard with 0's."""
-    board = []
-    for i in range(n):
-        board.append([])
-        for j in range(n):
-            board[i].append(' ')
+    board = [[' ' for i in range(n)] for j in range(n)]
     return board
 
 
@@ -35,7 +45,6 @@ def get_solution(board):
 
 def xout(board, row, col):
     """X out spots on a chessboard.
-
     All spots where non-attacking queens can no
     longer be played are X-ed out.
 
@@ -83,23 +92,3 @@ def xout(board, row, col):
         if c < 0:
             break
         board[r][c] = "x"
-        c -= 1
-
-
-def recursive_solve(board, row, queens, solutions):
-    """Recursively solve an N-queens puzzle.
-
-    Args:
-        board (list): The current working chessboard.
-        row (int): The current working row.
-        queens (int): The current number of placed queens.
-        solutions (list): A list of lists of solutions.
-    Returns:
-        solutions
-    """
-    if queens == len(board):
-        solutions.append(get_solution(board))
-        return solutions
-
-    for c in range(len(board)):
-        if board[row][c]
