@@ -1,14 +1,35 @@
-def width(self):
-     """Initializes a new Rectangle object.
+#!/usr/bin/python3
+"""Defines a Rectangle class."""
+
+
+class Rectangle:
+    """Represents a rectangle with a width and height attribute."""
+
+    def __init__(self, width=0, height=0):
+        """Initializes a new Rectangle object.
 
     Args:
         width (int): The width of the new rectangle.
         height (int): The height of the new rectangle.
-    """    
-    return self.__width
+        """
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        """Returns the value of the width attribute."""
+        return self.__width
 
     @width.setter
-    """Returns the value of the width attribute."""
+    """Sets the value of the width attribute.
+
+    Args:
+        value (int): The new value for the width attribute.
+
+    Raises:
+        TypeError: If value is not an integer.
+        ValueError: If value is less than 0.
+    """
     def width(self, value):
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -18,7 +39,7 @@ def width(self):
 
     @property
     def height(self):
-        """Returns the value of the width attribute."""
+        """Returns the value of the height attribute"""
         return self.__height
 
     @height.setter
@@ -28,4 +49,3 @@ def width(self):
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
